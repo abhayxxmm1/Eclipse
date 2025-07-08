@@ -1,13 +1,13 @@
-package typecasting;
+package typecasting; 	// with Multi-level inheritance
 
 public class ABCDriver {
 	public static void main(String[]args) {
 		A a1 = new B();
-		
-		C c1 = (C)a1;
 		a1.displayA();
-//		c1.display();
+//		C c1 = (C)a1;	// ClassCastException
 		
+//		c1.display();
+		a1.displayA();
 	}
 
 }

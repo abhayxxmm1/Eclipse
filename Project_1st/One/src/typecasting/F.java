@@ -1,4 +1,4 @@
-package typecasting;
+package typecasting;	// with Hierarchical Inheritance
 
 public class F extends D{
 	public void display()

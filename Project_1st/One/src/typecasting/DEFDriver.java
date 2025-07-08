@@ -1,4 +1,4 @@
-package typecasting;
+package typecasting;	// with Hierarchical Inheritance
 
 public class DEFDriver {
 	public static void main(String[]args)
@@ -7,7 +7,7 @@ public class DEFDriver {
 		
 		f1.display();
 		
-		E e1 = (E)f1;
-		e1.display();
+//		E e1 = (E)f1;
+//		e1.display();	// ClassCastException
 	}
 }

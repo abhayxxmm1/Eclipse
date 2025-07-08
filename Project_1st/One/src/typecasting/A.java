@@ -1,4 +1,4 @@
-package typecasting;
+package typecasting;	// with Multi-level inheritance
 
 public class A {
 	public void displayA()
