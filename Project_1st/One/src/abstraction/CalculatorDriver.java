@@ -8,6 +8,9 @@ public class CalculatorDriver {
 		
 		c1.addition(10, 20);
 		c1.multiplication(30, 40);
+		
+		System.out.println(c1.toString());
+		System.out.println(c1);
 	}
 
 }
