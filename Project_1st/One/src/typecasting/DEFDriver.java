@@ -7,7 +7,7 @@ public class DEFDriver {
 		
 		f1.display();
 		
-//		E e1 = (E)f1;
-//		e1.display();	// ClassCastException
+//		E e1 = (E)f1;	// ClassCastException
+//		e1.display();	
 	}
 }
