@@ -17,13 +17,15 @@ public class Employee {
 	public String toString()	// to changing the ObjectReferenceName according to us
 	{							// like the car no number plate for easy memorizing & understanding
 		return "[Name :"+name+", email :"+empid+", Salary :"+sal+"]";
-	}
+	}	// overriding object reference
+	
+	
 	
 	public boolean equals(Object o)
 	{
 		Employee e = (Employee)o; // passed Object
 		
-		if(this.name==e.name && this.empid==e.empid && this.sal==e.sal)	// Overriding
+		if(this.name==e.name && this.empid==e.empid && this.sal==e.sal)
 		{
 			return true;
 		}
