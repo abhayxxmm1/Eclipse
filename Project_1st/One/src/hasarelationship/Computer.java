@@ -6,7 +6,7 @@ public class Computer {
 	int ram;
 	int rom;
 	double price;
-	
+	Pendrive p1;
 
 	public Computer() {
 		// TODO Auto-generated constructor stub
@@ -20,6 +20,7 @@ public class Computer {
 		this.rom = rom;
 		this.price = price;
 		
+		
 	}
 	public void displayComputer()
 	{
@@ -32,7 +33,7 @@ public class Computer {
 	
 	public void insertPendrive(String brand,int memory,double price,int speed)
 	{
-		Pendrive p = new Pendrive(brand,memory,price,speed);
+		p1 = new Pendrive(brand,memory,price,speed);
 		System.out.println("Pendrive Inserted");
 	}
 }

@@ -10,7 +10,7 @@ public class ComputerDriver {
 		c1.displayComputer();
 		c1.insertPendrive("Sandisk", 32, 40, 5000);
 		
-		c1.p.displayPendrive();
+		c1.p1.displayPendrive();
 	}
 
 }
