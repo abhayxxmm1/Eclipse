@@ -36,7 +36,7 @@ public class Exp3 {
 			System.out.println("1) when the exception never occurs");
 			System.out.println("2) when an exception occurs a& it's handled");
 			System.out.println("3) Exception occurs but not handled (reference not caught sucessfully)");
-			System.out.println("Exception occurs in the try block but no catching mechanism");
+			System.out.println("4) Exception occurs in the try block but no catching mechanism");
 		}
 	}
 
