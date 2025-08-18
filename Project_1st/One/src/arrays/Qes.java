@@ -16,7 +16,11 @@ public class Qes {
 		
 		int neg[] = {-1,-23,235,-9,4,6,654,-3};
 		
-		System.out.println(Arrays.toString(posNeg(neg)));
+//		System.out.println(Arrays.toString(posNeg(neg)));
+		
+		String a = "c";
+		String b = "b";
+		System.out.println(a.compareTo(b));
 		
 	}
 	public static void longestRepeating(int[]a)
