@@ -19,12 +19,16 @@ public class TwoDimMulti {
 		};
 		int [][]c= new int[3][3];
 		
-		multi(a, b, c);
+		int [][]ans = multi(a, b, c);
 		for (int i = 0; i < c.length; i++) {
 		    for (int j = 0; j < c[0].length; j++) {
 		        System.out.print(c[i][j] + " ");
 		    }
 		    System.out.println();
+		}
+		
+		for (int i = 0; i < ans.length; i++) {
+			System.out.println(Arrays.toString(ans));
 		}
 		
 
