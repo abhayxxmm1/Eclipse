@@ -5,7 +5,7 @@ public interface ResizableArray {
 	int initialCap = 10 ;
 	double loadFactor = 0.75 ;
 	
-	boolean add(Object o) ;
+	boolean add(E o) ;
 	boolean add(int index,Object o) ;
 	boolean addAll(ResizableArray ar) ;
 	boolean addAll(int index,ResizableArray ar) ;

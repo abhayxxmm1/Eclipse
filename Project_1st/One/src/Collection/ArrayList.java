@@ -1,6 +1,6 @@
 package Collection;
 
-public class ArrayList {
+public class ArrayList<E> {
 	
 	Object [] ar;
 	int count = 0;
@@ -12,13 +12,19 @@ public class ArrayList {
 		ar = new Object[intialCap];
 	}
 	
-	ArrayList(int initalCap)
+	ArrayList(int initalCap) throws WrongInitialCapacity
 	{
-		this.intialCap = intialCap;
-		ar = new Object[initalCap];
+		if (intialCap>0) {
+			
+			this.intialCap = intialCap;
+			ar = new Object[initalCap];
+		}
+		else {
+			throw new WrongInitialCapacity("intial capacity cannot be wrong");
+		}
 	}
 
-	public boolean add(Object o)
+	public boolean add(E o)
 	{
 		if (count< ar.length*ResizableArray.loadFactor) {
 			
@@ -41,7 +47,7 @@ public class ArrayList {
 		return true;
 	}
 	
-	public boolean add(int index, Object o)
+	public boolean add(int index, E o)
 	{
 		if (index <= count) {
 			
@@ -77,10 +83,10 @@ public class ArrayList {
 			}
 		}
 		
-		throw new ArrayIndexOutOfBoundsException("Cannot insert whatever index you want to insert");
+		throw new ArrayIndexOutOfBoundsException("Cannot insert element wherever you want to insert");
 	}
 	
-	public boolean remove(Object o)
+	public boolean remove(E o)
 	{
 		int index = indexOf(o);
 		
@@ -143,7 +149,7 @@ public class ArrayList {
 		}
 	}
 	
-	public boolean contains(Object o)
+	public boolean contains(E o)
 	{
 		return indexOf(o)!=-1;
 	}
@@ -161,5 +167,185 @@ public class ArrayList {
 		return -1;
 	}
 	
+	public int size()
+	{
+		return count;
+	}
 	
+	public void clear()
+	{
+		for (int i = 0; i < count; i++) {
+			
+			ar[i] = null;
+		}
+		count = 0;
+	}
+	
+	public boolean isEmpty()
+	{
+		return count==0;
+	}
+	
+	public boolean equals(Object o) {
+		
+		if (o==null) {
+			
+			return false;
+		}
+		else if (this==o) {
+			return true;
+		}
+		else
+		{
+			ArrayList<E> a = (ArrayList<E>) o;
+			if (this.count==a.count) 
+			{
+				for (int i = 0; i < count; i++) {
+					
+					if (!this.ar[i].equals(a.ar[i])) {
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	
+	public E get(int index)
+	{
+		if (index>=0 && index<count) {
+			
+			return (E) ar[index];
+		}
+		throw new IndexOutOfRangeExceptiion("cannot find element out of range");
+	}
+	
+	public Object[] toArray()
+	{
+		Object [] nw = 	new Object[count];
+		
+		for (int i = 0; i < nw.length; i++) {
+			
+			nw[i] = ar[i];
+		}
+		
+		return nw;
+				
+	}
+
+
+	public boolean addAll(ResizableArray<E> ref)
+	{
+		ArrayList<E> a = (ArrayList<E>) ref;
+		
+		for (int i = 0; i < a.count; i++) {
+			
+			this.add((E)a.get(i));
+		}
+		
+		return true;
+	}
+	
+	public boolean addAll(int index, ResizableArray<E> ar)
+	{
+		if (index>=0 && index<count && ar!=null && ((ArrayList<E>)ar).count!=0 )
+		{
+			ArrayList<E> list = (ArrayList<E>) ar;
+			
+			for (int i = 0; i < this.size(); i++) {
+				
+				this.add(index, list.get(i));
+				
+				index++;
+			}
+			
+			return true;
+			
+		}
+		
+		return false;
+	}
+	
+	public boolean removeAll(ResizableArray<E> ar)
+	{
+		ResizableArray<E> list = (ResizableArray<E>) ar;
+		
+		if (list.size()==0) {
+			
+			return false;
+		}
+		else {
+			
+			for (int i = 0; i < list.size(); i++) {
+				
+				remove((E) list.get(i));
+			}
+			
+			return true;
+		}
+	}
+
+
+	public boolean 	retainAll(ResizableArray<E> ar)
+	{
+		if (ar!=null || ((ArrayList<E>)ar).count!=0) 
+		{
+			ArrayList<E> list = (ArrayList<E>)ar;
+			ArrayList<E> a = new ArrayList<E>();
+			
+			for (int i = 0; i < list.size(); i++) {
+				
+				if (this.contains(list.get(i))) {
+					
+					a.add(list.get(i));
+				}
+			}
+			
+			this.ar = a.ar;
+			
+			this.count = a.count;
+		
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean containsAll(ResizableArray<E> ar)
+	{
+		if (ar!=null && ((ArrayList<E>)ar).count!=0) {
+			
+			ArrayList<E> list = (ArrayList<E>)ar;	
+			
+			for (int i = 0; i < list.size(); i++) {
+				
+				if (!this.contains(list.get(i))) {
+					
+					return false;
+				}
+				
+				return true;
+			}
+			
+		}
+		return false;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

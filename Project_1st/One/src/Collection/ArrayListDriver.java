@@ -4,6 +4,8 @@ public class ArrayListDriver {
 
 	public static void main(String[] args) {
 		
+		/**
+		
 		
 		ArrayList a1 = new ArrayList(); // day 1
 		
@@ -29,9 +31,9 @@ public class ArrayListDriver {
 		
 		System.out.println(a1.indexOf("Hello"));
 		
-		
 		System.out.println(a1);
 		
+		*/
 		
 		
 	}
