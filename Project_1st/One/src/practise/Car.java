@@ -1,4 +1,4 @@
-package tyss.in;
+package practise;
 import java.util.Scanner;
 
 // Private Constructor //
