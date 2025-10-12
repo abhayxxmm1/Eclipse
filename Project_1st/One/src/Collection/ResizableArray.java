@@ -1,6 +1,6 @@
 package Collection;
 
-public interface ResizableArray {
+public interface ResizableArray<E> {
 
 	int initialCap = 10 ;
 	double loadFactor = 0.75 ;
